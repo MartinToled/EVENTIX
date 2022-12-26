@@ -1,0 +1,411 @@
+@mixin breakpoint($min-width, $max-width) {
+  @media screen and (min-width: $min-width) and (max-width: $max-width) {
+      @content;
+  }
+}
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+body {
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #433D41;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+/*Navigation Bar*/
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  color: #FFF;
+  height: 50px;
+  background-color: #B9974D;
+  font-family: 'Raleway', sans-serif;
+  /*Title on the top-left*/
+  .title{
+    color: white;
+    text-decoration: none;
+    width: 10%;
+    text-align: left;
+    margin-left: 0px;
+    padding-left: 20px;
+  }
+  /*Media query for the title*/
+
+  @include breakpoint(0px, 1000px){
+    /*when window size is 1000px - 0px, title width will expand because of the background color when hovered*/
+    .title{
+      width: 27%; 
+    }
+  }
+  /*when title is hovered, text and background color changes*/
+  .title:hover{
+    color: #B9974D;
+    background-color: #F4ECEA;
+  }
+  /*style of the text/link*/
+  a{
+    color: white;
+    text-decoration: none; //makes underlines under link disappear
+    width: 50%;
+    text-align: center;
+    margin-left: 0px;
+  }
+}
+/**/
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding:0;
+  a{
+    margin: 50px;
+  }
+  @include breakpoint(0px, 1000px){
+    a{
+      margin:0px;
+    }
+  }
+}
+
+.top-nav ul li a{
+  position: relative;
+  color: #FFF;
+  font-size: 20px;
+  padding: 5px 0;
+}
+.top-nav ul li a::before{
+  position: absolute;
+  content: '';
+  left: 0;
+  top:10%;
+  height: 3px;
+  width: 100%;
+  background: #FFF;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .4s linear;
+}
+.top-nav ul li a:hover:before{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+  margin-right: 135px;
+  margin-left: 40px;
+  @include breakpoint (0px, 1000px) {
+    margin-right: 25px;
+  }
+  .dropbtn {
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+}
+
+/*style of the dropdown links*/
+.dropdown-content {
+  display: none; //hides the dropdown until it is hovered
+  position:absolute;
+  background-color: #B9974D;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  a {
+    float: none;
+    text-decoration: none;
+    display: flex;  
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-left: 25%;
+  }
+}
+ /*makes the dropdown visible when hovered*/
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*Hamburger Menu*/
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/*Creation and the Animation of the menu button*/
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #FFF;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 1000ms;
+  border-radius: 2px;
+}
+/*top line of hambruger icon*/
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+/*bottom line of hambruger icon*/
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+/*Button shape when menu is closed*/
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotateZ(45deg) scaleX(0.6) translate(1px, 9.5px);
+}
+
+/*Button shape when menu is opened*/
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotateZ(315deg) scaleX(0.6) translate(1px, -9.5px);
+}
+
+/*Animation of Hamburger Menu*/
+@include breakpoint(0px, 1000px) {
+  .menu-button-container {
+      display: flex;
+      margin-right: 5%;
+  }
+
+  /*Dropdown links position and alignment when displayed*/
+  .menu {
+      position: absolute;
+      top: 0;
+      margin-top: 50px;
+      left: 0px;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      display: block;
+      z-index: 2;
+  }
+  /*dropdown position when closedd*/
+  #menu-toggle ~ .menu li {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition:  700ms ;
+  }
+  /*dropdown position when opened*/
+  #menu-toggle:checked ~ .menu li {
+      height: 2.5em;
+      padding: 0.5em;
+      transition:  700ms ;
+      z-index: 2;
+      justify-content: center;
+  }
+  /*center the contents of the menu*/
+  #menu-toggle:checked ~ .menu li a{
+    justify-content: center;
+}
+  .menu > li {
+      display: flex;
+      background-color: #B9974D ;
+  }
+}
+
+/*left and right buttons*/
+.pager{
+  font-size: 50px;
+  .previous{
+    margin-right: 30%;
+  }
+}
+
+
+/*Title on the left of the event*/
+.panel-title{
+  background-color: #B9974D;
+  color: #F4ECEA;
+  width: 25%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+}
+/*Title's font size decrease when the window width surpass the limit*/
+@include breakpoint(0px, 1000px){
+  .panel-title{
+    font-size: 23px;
+  }
+}
+
+/*style of the contents when an event is clicked*/
+#attraction-panel {
+  display:none;
+  width: 100%;
+  margin:0;
+  padding:0;
+}
+.panel-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #F4ECEA;
+  font-size: 20px;
+  h4{
+    margin-top: 2%;
+  }
+  img{
+    width: 15%;
+    image-rendering: smooth; //uses an algorithm that would smooth out the colors of the image
+  }
+}
+/*container for all of the contents in the webpage except the navigation bar*/
+.container{
+  display:flex;
+  background-color: #433D41;
+  width:100%;
+  margin:0;
+  padding:0;
+  /*makes sure all of the contents are fully covering the page*/
+  .row{
+    width:100%;
+  }
+
+  /*Navigation Arrows*/
+  ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin:0;
+    padding:0;
+    justify-content: center;
+  }
+  /*All the links inside the container*/
+  a{
+    color: white;
+    text-decoration: none;
+    margin:0;
+    padding:0;
+  }
+  /*Event*/
+  #events {
+    display: flex;
+    justify-content: center;
+    a{
+      display: block;
+    }
+  }
+}
+
+/*container of the map*/
+.map-container{
+  width: 100%;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  margin-top:2%;
+  margin-bottom: 2%;
+}
+/*size of the map*/
+#map{
+  display: flex;
+  height:400px;
+  width:100%;
+  z-index: 0;
+}
+/*Footer*/
+footer{
+  display: flex;
+  margin-top: 5%;
+  background-color: #B9974D;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color:#DCD7D4;
+  /*make all the align in a column*/
+  div{
+    display: flex;
+    flex-direction: column;
+    margin-inline: 10%;
+    margin-bottom: 2%;
+    /*headings*/
+    h2{
+      display: flex;
+      text-decoration: underline 5px; //makes underline under the headings
+    }
+    a{
+      line-height: 250%; // creates space between each link
+      letter-spacing: 2px; // makes space between each letter
+    }
+    /*paragraph*/
+    p{
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+    
+    /*breakpoint for both paragraphs and div to make it all fit
+    when window is smaller*/
+    @include breakpoint(0px, 1000px){
+      p{
+        font-size: 12px;
+      }
+    }
+  }
+  @include breakpoint(0px, 1000px){
+    div{
+      margin-inline: 5%;
+    }
+  }
+  @include breakpoint(0px, 1000px){
+    footer{
+      font-size: 10px;
+    }
+  }
+  /*made "More Info" heading lower to align witht the other headings*/
+  .info{
+    margin-top: 2%;
+  }
+  }

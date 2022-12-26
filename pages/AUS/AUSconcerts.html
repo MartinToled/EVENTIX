@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="../../css-scss/events.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+  <body>
+    <section class="top-nav">
+        <a href="../../index.html" class="title">
+           <h1>EVENTIX</h1>
+        </a>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+            <!--This will be the Hamburger Icon
+        which will if the screen width is 1000px and below-->
+          <div class='menu-button'></div>
+        </label>
+        <!--Menu dropdowns in the navigation bar-->
+        <ul class="menu">
+          <li><div class="dropdown">
+            <a href="#" class="dropbtn">USA
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <!--USA Links inside the dropdown-->
+            <div class="dropdown-content">
+                <a href="/pages/USA/USAconcerts.html">Concerts</a>
+                <a href="/pages/USA/USAmusical.html">Musical/Classical</a>
+                <a href="/pages/USA/USAsports.html">Sports</a>
+            </div></li>
+            <li><div class="dropdown">
+              <a href="#" class="dropbtn">UAE
+                <i class="fa fa-caret-down"></i>
+              </a>
+              <!--UAE Links inside the dropdown-->
+              <div class="dropdown-content">
+                <a href="/pages/UAE/UAEconcerts.html">Concerts</a>
+                <a href="/pages/UAE/UAEmusical.html">Musical/Classical</a>
+                <a href="/pages/UAE/UAEsports.html">Sports</a>
+              </div></li>
+            <li><div class="dropdown">
+              <a href="#" class="dropbtn">AUS 
+                <i class="fa fa-caret-down"></i>
+              </a>
+              <!--AUS Links inside the dropdown-->
+              <div class="dropdown-content">
+                <a href="/pages/AUS/AUSconcerts.html">Concerts</a>
+                <a href="/pages/AUS/AUSmusical.html">Musical/Classical</a>
+                <a href="/pages/AUS/AUSsports.html">Sports</a>
+              </div></li>
+            <li><div class="dropdown">
+                <a href="#" class="dropbtn">CAN
+                  <i class="fa fa-caret-down"></i>
+                </a>
+                <!--CAN Links inside the dropdown-->
+            <div class="dropdown-content">
+                <a href="/pages/CAN/CANconcerts.html">Concerts</a>
+                <a href="/pages/CAN/CANmusical.html">Musical/Classical</a>
+                <a href="/pages/CAN/CANsports.html">Sports</a>
+            </div></li>
+        </ul>
+    </section>
+    <div id="map"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+        <div id='events-panel' class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">CONCERTS IN AUS</h3>
+          </div>
+          <div id="events" class="list-group">
+            <a href="#" class="list-group-item">
+              <h4 class="list-group-item-heading"></h4> 
+              <p class="list-group-item-text"></p>
+              <p class="venue"></p>
+            </a>
+          </div>
+          <div id='attraction-panel' class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Venue</h3>
+            </div>
+            <div id="attraction" class="panel-body">
+              <h4 class="list-group-item-heading">Attraction title</h4>
+              <img class="col-xs-12" src="">
+              <p id="classification"></p>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <nav>
+              <ul class="pager">
+                <li id="prev" class="previous"><a href="#"><span aria-hidden="true">&larr;</span></a></li>
+                <li id="next" class="next"><a href="#"><span aria-hidden="true">&rarr;</span></a></li>
+              </ul>
+            </nav>
+          </div>
+          <footer>
+            <div class="info">
+              <h2>More Info</h2>
+              <a href="#">FAQ</a>
+              <a href="#">Support</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Privacy</a>
+            </div>
+            <div>
+              <h2>Socials</h2>
+              <a href="#">Facebook <i class="fa fa-facebook"></i></a>
+              <a href="#">Instagram <i class="fa fa-instagram"></i></a>
+              <a href="#">Twitter <i class="fa fa-twitter"></i></a>
+            </div>
+            <div>
+              <h2>Contact</h2>
+              <p>Eventix@gmail.com</p>
+              <p>1-123-000-9876</p>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHCZ4VtxVOXLK9YHxVzi-7Z1Wl0Mr7Clg&callback=getCoords">
+    </script>
+    <script src="../../js/AUS/AUSconcerts.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,289 @@
+/* created a media query breakpoint which could be easily accessed 
+later when creating breakpoints for specific parts of the page*/
+@mixin breakpoint($min-width, $max-width) {
+    @media screen and (min-width: $min-width) and (max-width: $max-width) {
+        @content;
+    }
+  }
+  
+  *,
+  *::before,
+  *::after {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  html {
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+  }
+  
+  /* Optional: show position indicator in red */
+  ::-webkit-scrollbar-thumb {
+    background: #FF0000;
+  }
+  
+  body {
+    overflow: hidden;
+    max-width: 100%;
+    background-color: #433D41;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  /*TITLE*/
+  .top-nav {
+    display: flex;
+    background-color: #B9974D;
+    color: #FFF;
+    font-family: 'Raleway', sans-serif;
+    margin:0;
+    .head1{
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      width: 100%;
+    }
+    h1{
+        align-items: center;
+        align-self: center;
+        align-content: center;
+        text-align: center;
+    }
+  }
+  
+  .container{
+    height: 400vh;
+    display:flex;
+  }
+  
+  // heading on the left side of the screen
+  .heading{
+    width: 50%;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: #DCD7D4;
+    margin: 0 0;
+    h1{
+      font-weight: bold;
+      font-size: 50px;
+      width: 50%;
+      text-align: center;
+      background-color: #B9974D;
+    }
+    @include breakpoint(0px, 1000px){
+      h1{
+        letter-spacing: 25px;
+        width: 30%;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+      }
+    }
+  }
+  
+  // left pages width aand style
+  .pages{
+    width:50%;
+    div{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    }
+  }
+  
+  // Style of the countries on the rights side of the page
+  .pages{ 
+    /*USA STYLE*/
+    .usa-img{
+      background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/USA.jpeg);
+      background-position: 60% 40%; 
+      background-size: cover;
+      background-repeat: no-repeat;
+      align-items: center;
+      align-self: center;
+      justify-content: center;
+      transition: 0.5s;
+      transform: scale(1);
+    
+      .usa{
+        text-orientation: upright;
+        letter-spacing: 30px;
+        font-size: 42px;
+        margin-bottom: 30%;
+        margin-right: 0%;
+        color:white;
+        text-decoration: none;
+      }
+        a {
+          transform: scale(1);
+          transition: 0.8s;
+          font-size: 27px;
+          color: #F4ECEA;
+          opacity: 1;
+          margin-bottom: 2%;
+        }
+        //when link is hovered, the size of the link will 
+        a:hover {
+         transform: scale(1.15);
+        }
+    }
+    .usa-img:hover{
+      transform: scale(1.02);
+    }
+    /*UAE STYLE*/
+    .uae-img{
+      background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/UAE.jpg);
+      background-position: 55% 35%; 
+      background-size: cover;
+      background-repeat: no-repeat;
+      align-items: center;
+      align-self: center;
+      justify-content: center;
+      transition: 0.5s;
+      transform: scale(1);
+    
+      .uae{
+        text-orientation: upright;
+        letter-spacing: 30px;
+        font-size: 42px;
+        margin-bottom: 30%;
+        margin-right: 0%;
+        color:white;
+        text-decoration: none;
+      }
+      a {
+        transform: scale(1);
+        transition: 0.8s;
+        font-size: 27px;
+        color: #F4ECEA;
+        opacity: 1;
+        margin-bottom: 2%;
+      }
+      //when link is hovered, the size of the link will
+      a:hover {
+       transform: scale(1.15);
+      }
+    }
+    .uae-img:hover{
+      transform: scale(1.02);
+    }
+    /*AUS STYLE*/
+    .aus-img{
+      background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/AUS.webp);
+      background-position: 55% 35%; 
+      background-size: cover;
+      background-repeat: no-repeat;
+      align-items: center;
+      align-self: center;
+      justify-content: center;
+      transition: 0.5s;
+      transform: scale(1);
+    
+      .aus{
+        text-orientation: upright;
+        letter-spacing: 30px;
+        font-size: 42px;
+        margin-bottom: 30%;
+        margin-right: 0%;
+        color:white;
+        text-decoration: none;
+      }
+      a {
+        transform: scale(1);
+        transition: 0.8s;
+        font-size: 27px;
+        color: #F4ECEA;
+        opacity: 1;
+        margin-bottom: 2%;
+      }
+      //when link is hovered, the size of the link will
+      a:hover {
+       transform: scale(1.15);
+      }
+    }
+    .aus-img:hover{
+      transform: scale(1.02);
+    }
+    /*CAN STYLE*/
+    .can-img{
+      background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../images/CAN.webp);
+      background-position: 55% 35%; 
+      background-size: cover;
+      background-repeat: no-repeat;
+      align-items: center;
+      align-self: center;
+      justify-content: center;
+      transition: 0.5s;
+      transform: scale(1);
+    
+      .can{
+        text-orientation: upright;
+        letter-spacing: 30px;
+        font-size: 42px;
+        margin-bottom: 30%;
+        margin-right: 0%;
+        color:white;
+        text-decoration: none;
+      }
+      a {
+        transform: scale(1);
+        transition: 0.8s;
+        font-size: 27px;
+        color: #F4ECEA;
+        opacity: 1;
+        margin-bottom: 2%;  
+      }
+      //when link is hovered, the size of the link will
+      a:hover {
+       transform: scale(1.15);
+      }
+    }
+    .can-img:hover{
+      transform: scale(1.02);
+    }
+  }
+  
+  footer{
+    display: flex;
+    background-color: #B9974D;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color:#DCD7D4;
+    div{
+      display: flex;
+      flex-direction: column;
+      margin-inline: 10%;
+      margin-bottom: 2%;
+      h2{
+        display: flex;
+      }
+      a{
+        line-height: 250%;
+        letter-spacing: 2px;
+        text-decoration: none;
+        color: #DCD7D4;
+      }
+      p{
+        font-size: 16px;
+        letter-spacing: 2px;
+      }
+    }
+    .info{
+      margin-top: 2%;
+    }
+    }

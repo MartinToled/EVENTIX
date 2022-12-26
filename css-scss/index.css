@@ -1,0 +1,393 @@
+/* created a media query breakpoint which could be easily accessed 
+later when creating breakpoints for specific parts of the page*/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+body {
+  overflow: hidden;
+  max-width: 100%;
+  background-color: #433D41;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/*TITLE*/
+.top-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #B9974D;
+  color: #FFF;
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+}
+
+.top-nav .head1 {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.top-nav h1 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+}
+
+.container {
+  height: 400vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.heading {
+  width: 50%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #DCD7D4;
+  margin: 0 0;
+}
+
+.heading h1 {
+  font-weight: bold;
+  font-size: 50px;
+  width: 50%;
+  text-align: center;
+  background-color: #B9974D;
+}
+
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+  .heading h1 {
+    letter-spacing: 25px;
+    width: 30%;
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+}
+
+.pages {
+  width: 50%;
+}
+
+.pages div {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pages {
+  /*USA STYLE*/
+  /*UAE STYLE*/
+  /*AUS STYLE*/
+  /*CAN STYLE*/
+}
+
+.pages .usa-img {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/USA.jpeg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/USA.jpeg);
+  background-position: 60% 40%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.pages .usa-img .usa {
+  text-orientation: upright;
+  letter-spacing: 30px;
+  font-size: 42px;
+  margin-bottom: 30%;
+  margin-right: 0%;
+  color: white;
+  text-decoration: none;
+}
+
+.pages .usa-img a {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  font-size: 27px;
+  color: #F4ECEA;
+  opacity: 1;
+  margin-bottom: 2%;
+}
+
+.pages .usa-img a:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.pages .usa-img:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.pages .uae-img {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/UAE.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/UAE.jpg);
+  background-position: 55% 35%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.pages .uae-img .uae {
+  text-orientation: upright;
+  letter-spacing: 30px;
+  font-size: 42px;
+  margin-bottom: 30%;
+  margin-right: 0%;
+  color: white;
+  text-decoration: none;
+}
+
+.pages .uae-img a {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  font-size: 27px;
+  color: #F4ECEA;
+  opacity: 1;
+  margin-bottom: 2%;
+}
+
+.pages .uae-img a:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.pages .uae-img:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.pages .aus-img {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/AUS.webp);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/AUS.webp);
+  background-position: 55% 35%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.pages .aus-img .aus {
+  text-orientation: upright;
+  letter-spacing: 30px;
+  font-size: 42px;
+  margin-bottom: 30%;
+  margin-right: 0%;
+  color: white;
+  text-decoration: none;
+}
+
+.pages .aus-img a {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  font-size: 27px;
+  color: #F4ECEA;
+  opacity: 1;
+  margin-bottom: 2%;
+}
+
+.pages .aus-img a:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.pages .aus-img:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.pages .can-img {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/CAN.webp);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/CAN.webp);
+  background-position: 55% 35%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.pages .can-img .can {
+  text-orientation: upright;
+  letter-spacing: 30px;
+  font-size: 42px;
+  margin-bottom: 30%;
+  margin-right: 0%;
+  color: white;
+  text-decoration: none;
+}
+
+.pages .can-img a {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  font-size: 27px;
+  color: #F4ECEA;
+  opacity: 1;
+  margin-bottom: 2%;
+}
+
+.pages .can-img a:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.pages .can-img:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #B9974D;
+  height: 100%;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 15px;
+  color: #DCD7D4;
+}
+
+footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-inline: 10%;
+  margin-bottom: 2%;
+}
+
+footer div h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer div a {
+  line-height: 250%;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: #DCD7D4;
+}
+
+footer div p {
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+footer .info {
+  margin-top: 2%;
+}
+/*# sourceMappingURL=index.css.map */
