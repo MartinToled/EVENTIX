@@ -3,7 +3,6 @@
 
 <head>
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -69,14 +68,18 @@
             </div></li>
         </ul>
     </section>
+    <!--GOOGLE MAP API-->
     <div id="map"></div>
+    <!--TICKETMASTER API-->
     <div class="container">
       <div class="row">
         <div class="col-xs-6">
         <div id='events-panel' class="panel panel-primary">
+          <!--HEADING-->
           <div class="panel-heading">
             <h3 class="panel-title">CONCERTS IN AUS</h3>
           </div>
+          <!--Shows events' name, date, and venue-->
           <div id="events" class="list-group">
             <a href="#" class="list-group-item">
               <h4 class="list-group-item-heading"></h4> 
@@ -84,6 +87,7 @@
               <p class="venue"></p>
             </a>
           </div>
+          <!--Shows the events' name, picture, and what type of the event it is-->
           <div id='attraction-panel' class="panel panel-primary">
             <div class="panel-heading">
               <h3 class="panel-title">Venue</h3>
@@ -94,6 +98,7 @@
               <p id="classification"></p>
             </div>
           </div>
+          <!--Previous and Next Buttons-->
           <div class="panel-footer">
             <nav>
               <ul class="pager">
@@ -102,6 +107,7 @@
               </ul>
             </nav>
           </div>
+          <!--FOOTER-->
           <footer>
             <div class="info">
               <h2>More Info</h2>
@@ -129,6 +135,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!--GOOGLE API KEY-->
     <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHCZ4VtxVOXLK9YHxVzi-7Z1Wl0Mr7Clg&callback=getCoords">
     </script>
